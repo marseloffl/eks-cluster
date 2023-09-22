@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: php-service
+ labels:
+   app: php-apache
+spec:
+ selector:
+   app: php-apache
+ type: LoadBalancer
+ ports:
+ - port: 80
+   targetPort: 31050
